@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="str" class="java.lang.String">
+		<constructor-arg>
+			<value>문자열!!!!!</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="jf" class="javax.swing.JFrame">
+		<constructor-arg>
+			<value>제목</value>
+		</constructor-arg>
+		<property name="visible">
+			<value>true</value>
+		</property>
+	</bean>
+	
+	<bean id="random" class="java.util.Random" />
+	
+	<bean id="programmer" class="edu.spring.bean.Programmer" />
+	<bean id="designer" class="edu.spring.bean.Designer" />
+	
+	<bean id="develop2" class="edu.spring.bean.Develop" 
+		p:emp-ref="programmer" />
+	
+<!-- 	<bean id="develop2" class="edu.spring.bean.Develop"> -->
+<!-- 		            첫글자를 대문자로 바꾼 뒤 앞에 set을 붙인 메소드명 -->
+<!-- 		<property name="emp" ref="designer" /> -->
+<!-- 	</bean> -->
+
+	<bean id="develop" class="edu.spring.bean.Develop" 
+		c:emp-ref="designer"/>
+	
+<!-- 	<bean id="develop" class="edu.spring.bean.Develop"> -->
+<!-- 		<constructor-arg ref="programmer" /> -->
+<!-- 	</bean> -->
+</beans>
+
+
+
+

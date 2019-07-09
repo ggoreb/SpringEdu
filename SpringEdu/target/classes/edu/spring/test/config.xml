@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- UserDao 클래스를 스프링의 외부조립기에게 알려주는 행위 -->
+	<bean id="userDao" class="edu.spring.test.UserDao" />
+	
+	<bean id="userDao2" class="edu.spring.test.UserDao" />
+
+	<bean id="email" class="edu.spring.test.Email" />
+</beans>
