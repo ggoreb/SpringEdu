@@ -1,27 +1,39 @@
 package edu.spring.test;
 
-import javax.swing.JFrame;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-class Data {
-	int score;
-	Data(int s) {
-		this.score = s;
-	}
-	Data() {}
-	void set(int s) {
-		this.score = s;
+class MyClass {
+	int age;
+	String name;
+	@Override
+	public String toString() {
+		return "MyClass [age=" + age + ", name=" + name + "]";
 	}
 }
+
 public class Main {
 	public static void main(String[] args) {
-		Data d = new Data();
 		
-//		JFrame j = new JFrame("力格");
+		List<String> list = new ArrayList<>();
 		
-		JFrame j = new JFrame();
-		j.setTitle("力格");
-		j.setSize(300, 200);
-		j.setVisible(true);
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		System.out.println(list);
+		
+		Map<String, String> map = new HashMap<>();
+		map.put("a", "111");
+		map.put("b", "222");
+		System.out.println(map);
+		System.out.println(map.hashCode());
+		
+		MyClass mc = new MyClass();
+		mc.age = 10;
+		mc.name = "AAA";
+		System.out.println(mc);
 	}
 }
 
